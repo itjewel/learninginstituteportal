@@ -11,19 +11,11 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Courses</h3>
             <ul className="space-y-2">
               {[
-                "Spanish",
-                "French",
-                "German",
-                "Italian",
-                "Portuguese",
+                "Japanese",
+                "Korean",
+                "Chinese ",
+                "Germa",
                 "Russian",
-                "Danish",
-                "Dutch",
-                "Indonesian",
-                "Norwegian",
-                "Polish",
-                "Swedish",
-                "Turkish",
               ].map((course, index) => (
                 <li key={index} className="text-gray-700 hover:underline">
                   {course}
@@ -40,14 +32,9 @@ const Footer = () => {
                 "Magazine",
                 "Podcasts",
                 "Tech Blog",
-                "For Business",
-                "Affiliate Program (USA)",
-                "Affiliate Program (Europe)",
                 "As a Gift",
                 "Refer a Friend",
                 "Student Discount",
-                "Military Discount",
-                "Healthcare Workers Discount",
                 "Educators Discount",
               ].map((item, index) => (
                 <li key={index} className="text-gray-700 hover:underline">
@@ -63,14 +50,10 @@ const Footer = () => {
             <ul className="space-y-2">
               {[
                 "About Us",
-                "Meet the Exec",
-                "The App",
-                "Live",
                 "Prices",
                 "Press",
                 "Careers",
                 "Help / FAQ",
-                "Customer Service",
                 "Accessibility Compliance",
                 "Mobile Terms",
               ].map((item, index) => (
