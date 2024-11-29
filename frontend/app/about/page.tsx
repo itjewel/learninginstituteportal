@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -14,7 +15,7 @@ export default function About() {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col items-center">
             <Image
-              src="/teamwork.svg"
+              src="/images/gallery/17.jpg"
               alt="Teamwork"
               width={256} // Set image width (64 * 4)
               height={256} // Set image height (64 * 4)
@@ -28,7 +29,7 @@ export default function About() {
 
           <div className="flex flex-col items-center">
             <Image
-              src="/growth.svg"
+              src="/images/gallery/23.jpg"
               alt="Growth"
               width={256} // Set image width (64 * 4)
               height={256} // Set image height (64 * 4)
@@ -45,12 +46,12 @@ export default function About() {
           <h3 className="text-xl font-semibold text-gray-800 mb-4">Get in Touch</h3>
           <p className="text-gray-600">
             For inquiries, collaboration, or support, feel free to{" "}
-            <a
+            <Link
               href="/contact"
               className="text-blue-500 hover:underline font-medium"
             >
               contact us
-            </a>
+            </Link>
             .
           </p>
         </div>
