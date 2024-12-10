@@ -1,5 +1,7 @@
-'use client'
+'use client';
+
 import { useState } from "react";
+import Image from "next/image";
 
 interface ImageData {
   id: number;
@@ -21,18 +23,6 @@ const Gallery: React.FC = () => {
     { id: 10, src: "/images/gallery/10.jpg", alt: "Image 10" },
     { id: 11, src: "/images/gallery/11.jpg", alt: "Image 11" },
     { id: 12, src: "/images/gallery/12.jpg", alt: "Image 12" },
-    { id: 13, src: "/images/gallery/13.jpg", alt: "Image 13" },
-    { id: 14, src: "/images/gallery/14.jpg", alt: "Image 14" },
-    { id: 15, src: "/images/gallery/15.jpg", alt: "Image 15" },
-    { id: 16, src: "/images/gallery/16.jpg", alt: "Image 16" },
-    { id: 17, src: "/images/gallery/17.jpg", alt: "Image 17" },
-    { id: 18, src: "/images/gallery/18.jpg", alt: "Image 18" },
-    { id: 19, src: "/images/gallery/19.jpg", alt: "Image 19" },
-    { id: 20, src: "/images/gallery/20.jpg", alt: "Image 20" },
-    { id: 21, src: "/images/gallery/21.jpg", alt: "Image 21" },
-    { id: 22, src: "/images/gallery/22.jpg", alt: "Image 22" },
-    { id: 23, src: "/images/gallery/23.jpg", alt: "Image 23" },
-    { id: 24, src: "/images/gallery/24.jpg", alt: "Image 24" },
   ]);
 
   return (
@@ -40,11 +30,16 @@ const Gallery: React.FC = () => {
       <h1 className="text-3xl font-bold text-gray-800 mb-6">Gallery</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-5xl">
         {images.map((image) => (
-          <div key={image.id} className="relative overflow-hidden rounded-lg shadow-md">
-            <img
+          <div
+            key={image.id}
+            className="relative overflow-hidden rounded-lg shadow-md aspect-w-1 aspect-h-1"
+          >
+            <Image
               src={image.src}
               alt={image.alt}
-              className="w-full h-full object-cover transition-transform transform hover:scale-105"
+              fill
+              className="object-cover transition-transform transform hover:scale-105"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
         ))}

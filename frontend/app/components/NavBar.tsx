@@ -15,7 +15,7 @@ const NavBar = () => {
           <div className="text-sm">
             Empowering Minds, Bridging Cultures – Learn Languages with EkushLanguage!
           </div>
-          <div className="text-sm">+880-17194-34163</div>
+          <div className="text-sm">01711791905 / 01711791908</div>
         </div>
       </div>
 
@@ -26,7 +26,7 @@ const NavBar = () => {
           <Link href="/">
             <div className="flex items-center space-x-4 cursor-pointer">
               <Image src={logoImage} width={50} height={50} alt="Logo" />
-              <div className="text-xl font-bold">Ekush Language</div>
+              <div className="text-xl font-bold">Ekush Language Academy</div>
             </div>
           </Link>
 
@@ -64,16 +64,43 @@ const NavBar = () => {
                 className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
               >
-                About
+                About us
               </Link>
             </li>
             <li className="border-b border-blue-700 md:border-none">
               <Link
-                href="/contact"
+                href="/about"
                 className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
               >
-                Contact
+                Services
+              </Link>
+            </li>
+            <li className="border-b border-blue-700 md:border-none">
+              <Link
+                href="/about"
+                className="block px-4 py-2 hover:bg-blue-700"
+                onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
+              >
+                Exam
+              </Link>
+            </li>
+            <li className="border-b border-blue-700 md:border-none">
+              <Link
+                href="/about"
+                className="block px-4 py-2 hover:bg-blue-700"
+                onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
+              >
+                Sucess
+              </Link>
+            </li>
+            <li className="border-b border-blue-700 md:border-none">
+              <Link
+                href="/gallery"
+                className="block px-4 py-2 hover:bg-blue-700"
+                onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
+              >
+                Gallery
               </Link>              
             </li>
             <li className="border-b border-blue-700 md:border-none">
@@ -87,13 +114,34 @@ const NavBar = () => {
             </li>
             <li className="border-b border-blue-700 md:border-none">
               <Link
-                href="/gallery"
+                href="/tutorials"
                 className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
               >
-                Gallery
+                News
               </Link>              
             </li>
+            <li className="border-b border-blue-700 md:border-none">
+              <Link
+                href="/contact"
+                className="block px-4 py-2 hover:bg-blue-700"
+                onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
+              >
+                Contact us
+              </Link>              
+            </li>
+
+            <li className="border-b border-blue-700 md:border-none">
+              <Link
+                href="/certificate-verification"
+                className="block px-4 py-2 hover:bg-blue-700"
+                onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
+              >
+                Certificate verification
+              </Link>              
+            </li>
+          
+           
             <li className="border-b border-blue-700 md:border-none">
               <Link
                 href="/login"
