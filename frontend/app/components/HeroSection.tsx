@@ -10,7 +10,15 @@ const HeroSection = () => {
         <p className="text-lg text-gray-600 mb-12">
          Explore a large variety of Korean, Japanese, English, and German language schools abroad in eight countries around the world.
         </p>
-
+{/* Construction Notice */}
+<div className="flex flex-col items-center">
+        <h1 className="text-pink-200 text-3xl font-bold mb-4">
+          This site is under construction
+        </h1>
+        <p className="text-gray-400 text-lg">
+          We are working hard to launch soon. Stay tuned!
+        </p>
+      </div>
      
       </div>
     </section>
