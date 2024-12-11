@@ -29,7 +29,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex justify-center items-start p-10">
+    <div className="flex justify-center items-start p-10 text-gray-600 bg-gray-50">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-5xl bg-white shadow-lg p-8 rounded-lg">
         {/* Contact Info Section */}
         <div>
