@@ -17,6 +17,7 @@
     "swiper": "^11.1.15"
   },
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@types/node": "^20",
     "@types/react": "^18.3.16",
     "@types/react-dom": "^18.3.5",

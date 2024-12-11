@@ -1,10 +1,13 @@
-'use client'
+'use client';
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function CompaniesSection() {
-  const [activeTab, setActiveTab] = useState('workingWith');
+  // Define a type for the tabs
+  type TabKey = 'workingWith' | 'membersOf' | 'ourConcerns';
+
+  const [activeTab, setActiveTab] = useState<TabKey>('workingWith');
 
   const tabs = [
     { id: 'workingWith', label: 'Working with' },
@@ -12,56 +15,21 @@ export default function CompaniesSection() {
     { id: 'ourConcerns', label: 'Our Concerns' },
   ];
 
-  const logos = {
+  // Define the logos object with proper typing
+  const logos: Record<TabKey, { src: string; alt: string; link: string }[]> = {
     workingWith: [
       { src: '/images/home/companies/working_with/1_partner_logo_1663044423.png', alt: 'Ministry of Women and Children Affairs', link: '' },
       { src: '/images/home/companies/working_with/2_partner_logo_1663044423.png', alt: 'Independent University Bangladesh', link: '' },
       { src: '/images/home/companies/working_with/5_partner_logo_1663044423.png', alt: 'University Logo 1', link: '' },
     ],
     membersOf: [
-        { src: '/images/home/companies/members/1_partner_logo_1663044437.png', alt: 'Ministry of Women and Children Affairs', link: '' },
-        { src: '/images/home/companies/members/2_partner_logo_1663044437.png', alt: 'Independent University Bangladesh', link: '' },
-        { src: '/images/home/companies/members/3_partner_logo_1663044437.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/4_partner_logo_1663044437.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/5_partner_logo_1663044423.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/5_partner_logo_1663044437.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/6_partner_logo_1663044423.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/6_partner_logo_1663044437.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/7_partner_logo_1663044423.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/7_partner_logo_1663044437.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/8_partner_logo_1663044423.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/8_partner_logo_1663044437.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/9_partner_logo_1663044423.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/9_partner_logo_1663044438.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/10_partner_logo_1663044438.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/11_partner_logo_1663044438.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/12_partner_logo_1663044438.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/13_partner_logo_1663044423.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/14_partner_logo_1663044423.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/15_partner_logo_1663044423.png', alt: 'University Logo 1', link: '' },
+      { src: '/images/home/companies/members/1_partner_logo_1663044437.png', alt: 'Ministry of Women and Children Affairs', link: '' },
+      { src: '/images/home/companies/members/2_partner_logo_1663044437.png', alt: 'Independent University Bangladesh', link: '' },
+      { src: '/images/home/companies/members/3_partner_logo_1663044437.png', alt: 'University Logo 1', link: '' },
     ],
     ourConcerns: [
-        { src: '/images/home/companies/members/7_partner_logo_1663044423.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/7_partner_logo_1663044437.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/8_partner_logo_1663044423.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/8_partner_logo_1663044437.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/9_partner_logo_1663044423.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/9_partner_logo_1663044438.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/10_partner_logo_1663044438.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/11_partner_logo_1663044438.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/12_partner_logo_1663044438.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/13_partner_logo_1663044423.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/14_partner_logo_1663044423.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/15_partner_logo_1663044423.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/1_partner_logo_1663044437.png', alt: 'Ministry of Women and Children Affairs', link: '' },
-        { src: '/images/home/companies/members/2_partner_logo_1663044437.png', alt: 'Independent University Bangladesh', link: '' },
-        { src: '/images/home/companies/members/3_partner_logo_1663044437.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/4_partner_logo_1663044437.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/5_partner_logo_1663044423.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/5_partner_logo_1663044437.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/6_partner_logo_1663044423.png', alt: 'University Logo 1', link: '' },
-        { src: '/images/home/companies/members/6_partner_logo_1663044437.png', alt: 'University Logo 1', link: '' },
-       
+      { src: '/images/home/companies/members/7_partner_logo_1663044423.png', alt: 'University Logo 1', link: '' },
+      { src: '/images/home/companies/members/8_partner_logo_1663044437.png', alt: 'University Logo 1', link: '' },
     ],
   };
 
@@ -75,7 +43,7 @@ export default function CompaniesSection() {
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => setActiveTab(tab.id as TabKey)}
               className={`px-6 py-2 rounded-lg text-sm font-medium ${
                 activeTab === tab.id
                   ? 'bg-blue-500 text-white'

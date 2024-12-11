@@ -1,5 +1,5 @@
 
-import HeroSection from "./components/HeroSection";
+// import HeroSection from "./components/HeroSection";
 import BannerComponent from "./components/home/BannerComponent";
 import ClickableSlider from "./components/home/ClickableSlider";
 import CompaniesSection from "./components/home/CompaniesSection";
