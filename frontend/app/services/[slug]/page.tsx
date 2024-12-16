@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 
 const courseData = {
@@ -20,17 +21,98 @@ const courseData = {
     `,
     material: ['Textbooks', 'Pronunciation guides', 'Cultural insights'],
   },
-  // Add more courses as needed
+  'bangla': {
+    title: 'Bangla',
+    description: 'Master Bangla with comprehensive language lessons for all skill levels.',
+    image: '/images/services/bangla.webp',
+    details: `
+      This course offers extensive training in Bangla language skills, including reading, writing, speaking, and grammar.
+      Designed for beginners and advanced learners alike.
+    `,
+    material: ['Practice sheets', 'Audio resources', 'Grammar books'],
+  },
+  'french-language': {
+    title: 'French Language',
+    description: 'Master the French language with our expert courses.',
+    image: '/images/services/french.webp',
+    details: `
+      Learn to speak and understand French with a focus on grammar, pronunciation, and cultural insights.
+    `,
+    material: ['Textbooks', 'Pronunciation guides', 'Cultural materials'],
+  },
+  'ielts-preparation-course': {
+    title: 'IELTS Preparation Course',
+    description: 'Prepare for IELTS with the best resources.',
+    image: '/images/services/ielts.webp',
+    details: `
+      Ace your IELTS exam with comprehensive preparation materials, practice tests, and personalized coaching.
+    `,
+    material: ['Mock tests', 'Grammar guides', 'Speaking practice materials'],
+  },
+  'smart-communicative-english': {
+    title: 'Smart Communicative English',
+    description: 'Improve your English communication skills.',
+    image: '/images/services/english.webp',
+    details: `
+      This course focuses on improving English speaking, listening, and writing skills for effective communication.
+    `,
+    material: ['Interactive lessons', 'Pronunciation guides', 'Writing exercises'],
+  },
+  'italian-language-course': {
+    title: 'Italian Language Course',
+    description: 'Learn Italian language at your pace.',
+    image: '/images/services/italians.webp',
+    details: `
+      Master Italian through engaging lessons that cover vocabulary, grammar, and cultural insights.
+    `,
+    material: ['Textbooks', 'Audio resources', 'Cultural materials'],
+  },
+  'chinese-language-course': {
+    title: 'Chinese Language Course',
+    description: 'Start learning Chinese with us today.',
+    image: '/images/services/chinese.webp',
+    details: `
+      Dive into the Chinese language with a focus on Mandarin, including tones, vocabulary, and writing characters.
+    `,
+    material: ['Writing practice sheets', 'Audio guides', 'Grammar books'],
+  },
+  'german-language-course': {
+    title: 'German Language Course',
+    description: 'Learn German with structured lessons and cultural insights.',
+    image: '/images/services/germany.webp',
+    details: `
+      Explore German language fundamentals, including vocabulary, grammar, and cultural nuances.
+    `,
+    material: ['Textbooks', 'Audio resources', 'Practice exercises'],
+  },
+  'russian-language-course': {
+    title: 'Russian Language Course',
+    description: 'Dive into the Russian language with comprehensive lessons and practice.',
+    image: '/images/services/russian.webp',
+    details: `
+      Learn Russian from basics to advanced levels, with a focus on reading, writing, and speaking fluently.
+    `,
+    material: ['Textbooks', 'Pronunciation guides', 'Cultural insights'],
+  },
 };
 
-// Dynamic route handler
-export default async function CourseDetails({ params }: { params: { slug: string } }) {
-  // Extract slug from params
-  const slug = await params.slug;
 
-  // Check if the slug is a valid key
-  if (slug in courseData) {
-    const course = courseData[slug as keyof typeof courseData];
+export default async function CourseDetails({ params }: { params: { slug: string } }) {
+  // Await params to resolve them fully
+  const resolvedParams = await params;
+  //console.log('Resolved Params:', resolvedParams);
+
+  // Extract and normalize the slug
+  const slug = resolvedParams?.slug;
+  // console.log('Original Slug:', slug);
+
+  // Normalize the slug by replacing double hyphens with single hyphens
+  const normalizedSlug = slug?.replace(/--+/g, '-');
+  // console.log('Normalized Slug:', normalizedSlug);
+
+  // Check if the normalized slug matches a key in courseData
+  if (normalizedSlug in courseData) {
+    const course = courseData[normalizedSlug as keyof typeof courseData];
 
     return (
       <div className="container mx-auto px-4 py-8">
@@ -63,3 +145,4 @@ export default async function CourseDetails({ params }: { params: { slug: string
     return <p className="text-center">Course not found.</p>;
   }
 }
+

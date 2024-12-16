@@ -78,7 +78,7 @@ const NavBar = () => {
             </li>
             <li className="border-b border-blue-700 md:border-none">
               <Link
-                href="/about"
+                href="/exam"
                 className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
               >
@@ -87,7 +87,7 @@ const NavBar = () => {
             </li>
             <li className="border-b border-blue-700 md:border-none">
               <Link
-                href="/about"
+                href="/success"
                 className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
               >
@@ -114,7 +114,7 @@ const NavBar = () => {
             </li>
             <li className="border-b border-blue-700 md:border-none">
               <Link
-                href="/tutorials"
+                href="/news"
                 className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
               >
