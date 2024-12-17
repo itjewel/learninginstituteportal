@@ -1,91 +1,99 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100">
+    <footer className="bg-gray-900 text-white">
       {/* Main Footer Content */}
       <div className="container mx-auto py-12 px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Courses Section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* About Section */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Courses</h3>
+            <h3 className="font-bold text-lg mb-4">About</h3>
+            <p className="text-gray-400 leading-6">
+            একুশ ল্যাংগুয়েজ একাডেমি ভাষা শিক্ষার সুযোগ প্রদান করে, যেখানে রয়েছে জাপানি, কোরিয়ান, চাইনিজ, জার্মান সহ আরও অনেক ভাষা। আমাদের কমিউনিটিতে যোগ দিন, যেখানে শিখার মাধ্যমে স্বপ্ন পূরণ সম্ভব।
+            </p>
+          </div>
+
+          {/* Pages Section */}
+          <div>
+            <h3 className="font-bold text-lg mb-4">Pages</h3>
             <ul className="space-y-2">
               {[
-                "Japanese",
-                "Korean",
-                "Chinese ",
-                "Germa",
-                "Russian",
-              ].map((course, index) => (
-                <li key={index} className="text-gray-700 hover:underline">
-                  {course}
+                "Blog",
+                "Student Registration",
+                "Instructor Registration",
+                "Privacy Policy",
+                "Refund and Returns Policy",
+              ].map((page, index) => (
+                <li key={index} className="text-gray-400 hover:underline">
+                  {page}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* More Babbel Section */}
+          {/* Contact Section */}
           <div>
-            <h3 className="font-bold text-lg mb-4">More EkushLanguage</h3>
-            <ul className="space-y-2">
-              {[
-                "Magazine",
-                "Podcasts",
-                "Tech Blog",
-                "As a Gift",
-                "Refer a Friend",
-                "Student Discount",
-                "Educators Discount",
-              ].map((item, index) => (
-                <li key={index} className="text-gray-700 hover:underline">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company Section */}
-          <div>
-            <h3 className="font-bold text-lg mb-4">Company</h3>
-            <ul className="space-y-2">
-              {[
-                "About Us",
-                "Prices",
-                "Press",
-                "Careers",
-                "Help / FAQ",
-                "Accessibility Compliance",
-                "Mobile Terms",
-              ].map((item, index) => (
-                <li key={index} className="text-gray-700 hover:underline">
-                  {item}
-                </li>
-              ))}
+            <h3 className="font-bold text-lg mb-4">Contact</h3>
+            <ul className="space-y-2 text-gray-400">
+              <li>
+                **ঠিকানা:** ২৭/১, ইন্দিরা রোড, লেগুনা স্ট্যান্ড, ফার্মগেট, ঢাকা।  
+                (রুপালী ব্যাংকের পূর্ব পাশের বিল্ডিং)
+              </li>
+              <li>
+                **ইমেইল:**{" "}
+                <Link
+                  href="mailto:infoekush@gmail.com"
+                  className="hover:text-blue-500"
+                >
+                  infoekush@gmail.com
+                </Link>
+              </li>
+              <li>
+                **কল করুন:**{" "}
+                <Link href="tel:01711791905" className="hover:text-blue-500">
+                  01711791905
+                </Link>{" "}
+                /{" "}
+                <Link href="tel:01711791908" className="hover:text-blue-500">
+                  01711791908
+                </Link>
+              </li>
+              <li>
+                **ওয়েবসাইট:**{" "}
+                <Link
+                  href="https://ekushlanguage.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-500"
+                >
+                  ekushlanguage.com
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
       </div>
 
       {/* Bottom Footer */}
-      <div className="bg-gray-200 py-6">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 text-sm text-gray-600">
-          <p>© 2024 EkushLanguage GmbH ・ Imprint ・ Terms & Conditions ・ Privacy Statement</p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="#" className="hover:text-blue-600">
+      <div className="bg-gray-800 py-6">
+        <div className="container mx-auto text-center text-gray-500">
+          <p>© 2024 Ekush Language Academy </p>
+          <div className="flex justify-center space-x-4 mt-4">
+            <Link href="https://www.facebook.com/JahirEkush21" className="hover:text-blue-500">
               <i className="fab fa-facebook"></i>
-            </a>
-            <a href="#" className="hover:text-blue-600">
+            </Link>
+            <Link href="#" className="hover:text-blue-500">
               <i className="fab fa-twitter"></i>
-            </a>
-            <a href="#" className="hover:text-blue-600">
+            </Link>
+            <Link href="https://www.youtube.com/@EkushLanguage" className="hover:text-blue-500">
               <i className="fab fa-youtube"></i>
-            </a>
-            <a href="#" className="hover:text-blue-600">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="#" className="hover:text-blue-600">
+            </Link>
+            
+            <Link href="#" className="hover:text-blue-500">
               <i className="fab fa-linkedin"></i>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
