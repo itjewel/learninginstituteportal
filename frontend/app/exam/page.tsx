@@ -58,8 +58,9 @@ const ExamPage = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="bg-white shadow-lg rounded-lg p-6">
+    <section className="bg-teal-50 py-16">
+    <div className="container mx-auto px-4 py-8 text-gray-600">
+      <div className="shadow-lg rounded-lg p-6">
         <h1 className="text-3xl font-bold text-center mb-4">Exam Page</h1>
 
         {!showResult ? (
@@ -97,6 +98,7 @@ const ExamPage = () => {
         )}
       </div>
     </div>
+    </section>
   );
 };
 

@@ -56,7 +56,8 @@ const NewsPage = () => {
       : newsData.filter((news) => news.category === activeCategory);
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <section className="bg-teal-50 py-16">
+      <div className="container mx-auto px-4 text-gray-600 shadow-lg">
       {/* Headline Section */}
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-center mb-4">Latest News</h1>
@@ -118,6 +119,7 @@ const NewsPage = () => {
         </div>
       )}
     </div>
+    </section>
   );
 };
 
