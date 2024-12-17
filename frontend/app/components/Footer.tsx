@@ -19,18 +19,23 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4">Pages</h3>
             <ul className="space-y-2">
-              {[
-                "Blog",
-                "Student Registration",
-                "Instructor Registration",
-                "Privacy Policy",
-                "Refund and Returns Policy",
-              ].map((page, index) => (
-                <li key={index} className="text-gray-400 hover:underline">
-                  {page}
-                </li>
-              ))}
-            </ul>
+            {[
+              { name: "News", link: "/news" },
+              { name: "Student Registration", link: "/register" },
+              { name: "Privacy Policy", link: "/privacy-policy" },
+              { name: "Refund and Returns Policy", link: "/refund-policy" },
+            ].map((page, index) => (
+              <li key={index}>
+                <Link
+                  href={page.link}
+                  className="text-gray-400 hover:underline hover:text-gray-300 transition"
+                >
+                  {page.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
           </div>
 
           {/* Contact Section */}
@@ -81,19 +86,15 @@ const Footer = () => {
         <div className="container mx-auto text-center text-gray-500">
           <p>© 2024 Ekush Language Academy </p>
           <div className="flex justify-center space-x-4 mt-4">
-            <Link href="https://www.facebook.com/JahirEkush21" className="hover:text-blue-500">
+            <Link target="_blank" href="https://www.facebook.com/JahirEkush21" className="hover:text-blue-500">
               <i className="fab fa-facebook"></i>
             </Link>
-            <Link href="#" className="hover:text-blue-500">
-              <i className="fab fa-twitter"></i>
-            </Link>
-            <Link href="https://www.youtube.com/@EkushLanguage" className="hover:text-blue-500">
+          
+            <Link target="_blank" href="https://www.youtube.com/@EkushLanguage" className="hover:text-blue-500">
               <i className="fab fa-youtube"></i>
             </Link>
             
-            <Link href="#" className="hover:text-blue-500">
-              <i className="fab fa-linkedin"></i>
-            </Link>
+            
           </div>
         </div>
       </div>
