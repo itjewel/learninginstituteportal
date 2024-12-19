@@ -24,13 +24,13 @@ const Contact = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form Data Submitted:", formData);
-    // Reset form data if needed
     setFormData({ name: "", email: "", message: "" });
   };
 
   return (
-     <div className="container mx-auto px-4 py-8 bg-gray-50 text-gray-600">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-5xl bg-white shadow-lg p-8 rounded-lg">
+    <section className="bg-gray-50">
+    <div className="container mx-auto px-4 py-20 bg-gray-50 text-gray-600">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-7xl bg-white shadow-lg p-8 rounded-lg">
         {/* Contact Info Section */}
         <div>
           <h2 className="text-2xl font-semibold mb-6">Contact Info:</h2>
@@ -46,12 +46,21 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Phone Numbers */}
+            {/* Mobile Numbers */}
             <div className="flex items-start">
               <div className="text-blue-500 text-2xl mr-4">📞</div>
               <div>
-                <p className="font-bold">কল করুন:</p>
+                <p className="font-bold">মোবাইল:</p>
                 <p>01711791905 / 01711791908</p>
+              </div>
+            </div>
+
+            {/* Phone Number */}
+            <div className="flex items-start">
+              <div className="text-blue-500 text-2xl mr-4">☎️</div>
+              <div>
+                <p className="font-bold">ফোন:</p>
+                <p>+8802223315145</p>
               </div>
             </div>
 
@@ -94,24 +103,40 @@ const Contact = () => {
               <textarea
                 name="message"
                 placeholder="Comment or Message"
-                rows={4} // Correct usage
+                rows={4}
                 value={formData.message}
                 onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>
             </div>
-            <div>
+            <div className="text-right">
               <button
                 type="submit"
                 className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600"
               >
-                Submit
+               Send Information
               </button>
             </div>
           </form>
         </div>
       </div>
+
+      {/* Map Section */}
+      <div className="mt-8 bg-white shadow-lg p-6 rounded-lg">
+        <h2 className="text-2xl font-semibold mb-4">Our Location:</h2>
+        <div className="overflow-hidden rounded-lg shadow-md">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.9644425296916!2d90.38425461543257!3d23.75358429443537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf57f2c3e7b1%3A0x9f4e51e2e2c6fcd5!2s27%2F1%20Indira%20Road%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1694699599307!5m2!1sen!2sbd"
+            width="100%"
+            height="400"
+            allowFullScreen={true}
+            loading="lazy"
+            className="border-0"
+          ></iframe>
+        </div>
+      </div>
     </div>
+    </section>
   );
 };
 

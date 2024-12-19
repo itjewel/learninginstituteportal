@@ -56,13 +56,19 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                **কল করুন:**{" "}
-                <Link href="tel:01711791905" className="hover:text-blue-500">
-                  01711791905
+                **মোবাইল:**{" "}
+                <Link href="tel:+8801711791905" className="hover:text-blue-500">
+                  +8801711791905
                 </Link>{" "}
                 /{" "}
-                <Link href="tel:01711791908" className="hover:text-blue-500">
-                  01711791908
+                <Link href="tel:+8801711791908" className="hover:text-blue-500">
+                  +8801711791908
+                </Link>
+              </li>
+              <li>
+                **ফোন:**{" "}
+                <Link href="tel:+8802223315145" className="hover:text-blue-500">
+                  +8802223315145
                 </Link>
               </li>
               <li>

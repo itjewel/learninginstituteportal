@@ -4,13 +4,17 @@ import Link from "next/link";
 export default function BannerComponent() {
     return (
       <div
-        className="relative h-[80vh] flex items-center justify-center bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/images/home/logo.jpg')",
-        }}
-      >
+      style={{
+        backgroundImage: "url('/images/logo_transparent.png')",
+        backgroundSize: "auto 80vh", // Sets the height of the background image
+        backgroundRepeat: "no-repeat", // Ensures no repeating
+        backgroundPosition: "center", // Centers the background image
+      }}
+      className="relative h-[80vh] flex items-center justify-center bg-cover bg-center bg-no-repeat"
+      
+    >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-blue-900 bg-opacity-80"></div>
+        <div className="absolute inset-0 bg-blue-900 bg-opacity-90"></div>
   
         {/* Content */}
         <div className="relative z-10 text-center text-white px-4">

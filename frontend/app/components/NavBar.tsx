@@ -5,27 +5,29 @@ import Image from "next/image";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const logoImage = "/images/logo.jpg"; // Path relative to the 'public' folder
+  const logoImage = "/images/logo_transparent.png"; // Path relative to the 'public' folder
 
   return (
     <header>
       {/* Top Navbar */}
-      <div className="bg-red-800 text-white py-2">
+      <div className="bg-red-800 text-white py-2 hidden sm:flex">
         <div className="container mx-auto flex justify-between items-center px-6">
           <div className="text-sm">
             Empowering Minds, Bridging Cultures – Learn Languages with EkushLanguage!
           </div>
-          <div className="text-sm">01711791905 / 01711791908</div>
+          <div className="text-sm">
+            Mobile: +8801711791905 / +8801711791908 | Phone: +8802223315145
+          </div>
         </div>
       </div>
 
       {/* Main Navbar */}
       <nav className="bg-blue-800 text-white">
-        <div className="container mx-auto flex items-center justify-between h-16 px-6">
+        <div className="mx-auto flex items-center justify-between h-16 px-6">
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center space-x-4 cursor-pointer">
-              <Image src={logoImage} width={50} height={50} alt="Logo" />
+              <Image src={logoImage} width={80} height={80} alt="Logo" />
               <div className="text-xl font-bold">Ekush Language Academy</div>
             </div>
           </Link>
@@ -45,9 +47,9 @@ const NavBar = () => {
 
           {/* Menu */}
           <ul
-            className={`items-center absolute md:static bg-blue-800 top-16 left-0 w-full md:w-auto z-10 transition-all duration-300 ease-in-out ${
-              menuOpen || "md:flex"
-            } ${menuOpen ? "opacity-100 visible mt-14" : "opacity-0 invisible md:opacity-100 md:visible"}`}
+            className={`absolute md:static bg-blue-800 top-16 left-0 w-full md:w-auto z-50 transition-all duration-300 ease-in-out ${
+              menuOpen ? "opacity-100 visible" : "opacity-0 invisible md:opacity-100 md:visible"
+            } md:flex`}
           >
             <li className="border-b border-blue-700 md:border-none">
               <Link
@@ -91,7 +93,7 @@ const NavBar = () => {
                 className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
               >
-                Sucess
+                Success
               </Link>
             </li>
             <li className="border-b border-blue-700 md:border-none">
@@ -101,7 +103,7 @@ const NavBar = () => {
                 onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
               >
                 Gallery
-              </Link>              
+              </Link>
             </li>
             <li className="border-b border-blue-700 md:border-none">
               <Link
@@ -110,7 +112,7 @@ const NavBar = () => {
                 onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
               >
                 Tutorials
-              </Link>              
+              </Link>
             </li>
             <li className="border-b border-blue-700 md:border-none">
               <Link
@@ -119,7 +121,7 @@ const NavBar = () => {
                 onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
               >
                 News
-              </Link>              
+              </Link>
             </li>
             <li className="border-b border-blue-700 md:border-none">
               <Link
@@ -128,9 +130,8 @@ const NavBar = () => {
                 onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
               >
                 Contact us
-              </Link>              
+              </Link>
             </li>
-
             <li className="border-b border-blue-700 md:border-none">
               <Link
                 href="/certificate-verification"
@@ -138,10 +139,17 @@ const NavBar = () => {
                 onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
               >
                 Certificate verification
-              </Link>              
+              </Link>
             </li>
-          
-           
+            <li className="border-b border-blue-700 md:border-none">
+              <Link
+                href="/register"
+                className="block px-4 py-2 hover:bg-blue-700"
+                onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
+              >
+                Admission
+              </Link>
+            </li>
             <li className="border-b border-blue-700 md:border-none">
               <Link
                 href="/login"
@@ -149,9 +157,8 @@ const NavBar = () => {
                 onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
               >
                 Login
-              </Link>              
+              </Link>
             </li>
-
           </ul>
         </div>
       </nav>
