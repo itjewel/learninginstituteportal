@@ -14,7 +14,7 @@ export default function BannerComponent() {
       
     >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gray-900 bg-opacity-85"></div>
+        <div className="absolute inset-0 bg-blue-900 bg-opacity-85"></div>
   
         {/* Content */}
         <div className="relative z-10 text-center text-white px-4">

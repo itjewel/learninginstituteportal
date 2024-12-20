@@ -1,16 +1,15 @@
-import Image from 'next/image';
-import Link from 'next/link';
 
+// Sample News Data
 const newsData = [
   {
-    slug: 'space-exploration',
-    title: 'Breaking: New Discoveries in Space Exploration',
+    slug: "space-exploration",
+    title: "Breaking: New Discoveries in Space Exploration",
     description:
-      'Scientists have uncovered groundbreaking findings that could change our understanding of the universe.',
+      "Scientists have uncovered groundbreaking findings that could change our understanding of the universe.",
     image:
-      'https://images.unsplash.com/photo-1581091870683-3ff21bb04c3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
-    category: 'Science',
-    date: 'December 16, 2024',
+      "https://images.unsplash.com/photo-1581091870683-3ff21bb04c3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+    category: "Science",
+    date: "December 16, 2024",
     content: `
       In a groundbreaking discovery, astronomers have identified a new planet in a nearby solar system that could harbor life.
       Using advanced telescopes, scientists observed unique atmospheric patterns that indicate the presence of water and essential elements.
@@ -18,14 +17,14 @@ const newsData = [
     `,
   },
   {
-    slug: 'ai-dominance',
-    title: 'Tech Giants Compete for AI Dominance',
+    slug: "ai-dominance",
+    title: "Tech Giants Compete for AI Dominance",
     description:
-      'A closer look at how major tech companies are investing in the future of artificial intelligence.',
+      "A closer look at how major tech companies are investing in the future of artificial intelligence.",
     image:
-      'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
-    category: 'Technology',
-    date: 'December 15, 2024',
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+    category: "Technology",
+    date: "December 15, 2024",
     content: `
       The race to develop cutting-edge AI technology has intensified as tech giants pour billions into research and development.
       Companies like OpenAI, Google, and Microsoft are at the forefront, competing to create AI systems capable of revolutionizing industries from healthcare to transportation.
@@ -34,75 +33,20 @@ const newsData = [
   },
 ];
 
-// Define the type for dynamic route params
-interface NewsDetailsParams {
-  params: {
-    slug: string;
-  };
+// Generate static params for dynamic routes
+export async function generateStaticParams() {
+  return newsData.map((news) => ({
+    slug: news.slug,
+  }));
 }
 
-// Dynamic Route Component
-export default function NewsDetails({ params }: NewsDetailsParams) {
-  // Extract slug from params
-  const { slug } = params;
+// Dynamic Page Component
+export default function NewsDetails() {
 
-  // Find the news article by slug
-  const article = newsData.find((news) => news.slug === slug);
-
-  if (!article) {
-    return (
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold text-center">Article Not Found</h1>
-        <p className="text-center text-gray-600 mt-4">
-          The news article you are looking for does not exist.
-        </p>
-        <div className="text-center mt-6">
-          <Link
-            href="/news"
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
-          >
-            Back to News
-          </Link>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* Article Header */}
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
-        <p className="text-gray-600">
-          {article.date} | <span className="font-semibold">{article.category}</span>
-        </p>
-      </div>
-
-      {/* Article Image */}
-      <div className="mb-8">
-        <Image
-          src={article.image}
-          alt={article.title}
-          width={800}
-          height={400}
-          className="w-full h-auto rounded-lg"
-        />
-      </div>
-
-      {/* Article Content */}
-      <div className="prose max-w-none mb-8">
-        <p>{article.content}</p>
-      </div>
-
-      {/* Go Back Button */}
-      <div className="text-center">
-        <Link
-          href="/news"
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
-        >
-          Back to News
-        </Link>
-      </div>
+      <h2>News Details</h2>
     </div>
   );
 }

@@ -14,11 +14,7 @@ const NavBar = () => {
 
       {/* Main Navbar */}
       <nav
-        style={{
-          background: '#3f3f46', // Custom gray 750 color
-          color: 'white',
-        }}
-        className="bg-gray-750 text-white"
+        className="bg-blue-800 text-white"
       >
         <div className="mx-auto flex items-center justify-between h-16 px-6 relative">
           {/* Logo */}
@@ -53,7 +49,7 @@ const NavBar = () => {
               backgroundColor: menuOpen ? "rgba(63, 63, 70, 0.9)" : "transparent",
             }}
           >
-            <li className="border-b border-gray-800 md:border-none">
+            <li className="border-b border-blue-800 md:border-none">
               <Link
                 href="/"
                 className="block px-4 py-2"
@@ -62,100 +58,100 @@ const NavBar = () => {
                 Home
               </Link>
             </li>
-            <li className="border-b border-gray-800 md:border-none">
+            <li className="border-b border-blue-800 md:border-none">
               <Link
                 href="/about"
-                className="block px-4 py-2 hover:bg-gray-700"
+                className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)}
               >
                 About
               </Link>
             </li>
-            <li className="border-b border-gray-800 md:border-none">
+            <li className="border-b border-blue-800 md:border-none">
               <Link
                 href="/services"
-                className="block px-4 py-2 hover:bg-gray-700"
+                className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)}
               >
                 Services
               </Link>
             </li>
-            <li className="border-b border-gray-800 md:border-none">
+            <li className="border-b border-blue-800 md:border-none">
               <Link
                 href="/exam"
-                className="block px-4 py-2 hover:bg-gray-700"
+                className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)}
               >
                 Exam
               </Link>
             </li>
-            <li className="border-b border-gray-800 md:border-none">
+            <li className="border-b border-blue-800 md:border-none">
               <Link
                 href="/success"
-                className="block px-4 py-2 hover:bg-gray-700"
+                className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)}
               >
                 Success
               </Link>
             </li>
-            <li className="border-b border-gray-800 md:border-none">
+            <li className="border-b border-blue-800 md:border-none">
               <Link
                 href="/gallery"
-                className="block px-4 py-2 hover:bg-gray-700"
+                className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)}
               >
                 Gallery
               </Link>
             </li>
-            <li className="border-b border-gray-800 md:border-none">
+            <li className="border-b border-blue-800 md:border-none">
               <Link
                 href="/tutorials"
-                className="block px-4 py-2 hover:bg-gray-700"
+                className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)}
               >
                 Tutorials
               </Link>
             </li>
-            <li className="border-b border-gray-800 md:border-none">
+            <li className="border-b border-blue-800 md:border-none">
               <Link
                 href="/news"
-                className="block px-4 py-2 hover:bg-gray-700"
+                className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)}
               >
                 News
               </Link>
             </li>
-            <li className="border-b border-gray-800 md:border-none">
+            <li className="border-b border-blue-800 md:border-none">
               <Link
                 href="/contact"
-                className="block px-4 py-2 hover:bg-gray-700"
+                className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)}
               >
                 Contact
               </Link>
             </li>
-            <li className="border-b border-gray-800 md:border-none">
+            <li className="border-b border-blue-800 md:border-none">
               <Link
                 href="/certificate-verification"
-                className="block px-4 py-2 hover:bg-gray-700"
+                className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)}
               >
                 Certificate
               </Link>
             </li>
-            <li className="border-b border-gray-800 md:border-none">
+            <li className="border-b border-blue-800 md:border-none">
               <Link
                 href="/register"
-                className="block px-4 py-2 hover:bg-gray-700"
+                className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)}
               >
                 Admission
               </Link>
             </li>
-            <li className="border-b border-gray-800 md:border-none">
+            <li className="border-b border-blue-800 md:border-none">
               <Link
                 href="/login"
-                className="block px-4 py-2 hover:bg-gray-700"
+                className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)}
               >
                 Login

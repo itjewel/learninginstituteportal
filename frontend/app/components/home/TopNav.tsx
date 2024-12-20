@@ -43,7 +43,7 @@ function TopNav() {
   return (
     <>
       {/* Top Navbar */}
-      <div className="bg-gray-800 text-white py-2 hidden sm:flex">
+      <div className="bg-red-800 text-white py-2 hidden sm:flex">
         <div className="container mx-auto flex justify-between items-center px-6">
           <div className="text-sm animate-typing">{displayedText}</div>
           <div className="text-sm">
