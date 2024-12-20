@@ -56,6 +56,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                **ফোন:**{" "}
+                <Link href="tel:+8802223315145" className="hover:text-blue-500">
+                  +8802223315145
+                </Link>
+              </li>
+              <li>
                 **মোবাইল:**{" "}
                 <Link href="tel:+8801711791905" className="hover:text-blue-500">
                   +8801711791905
@@ -65,12 +71,7 @@ const Footer = () => {
                   +8801711791908
                 </Link>
               </li>
-              <li>
-                **ফোন:**{" "}
-                <Link href="tel:+8802223315145" className="hover:text-blue-500">
-                  +8802223315145
-                </Link>
-              </li>
+              
               <li>
                 **ওয়েবসাইট:**{" "}
                 <Link
@@ -81,6 +82,7 @@ const Footer = () => {
                 >
                   ekushlanguage.com
                 </Link>
+                
               </li>
             </ul>
           </div>

@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import TopNav from "./home/TopNav";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,21 +10,17 @@ const NavBar = () => {
 
   return (
     <header>
-      {/* Top Navbar */}
-      <div className="bg-red-800 text-white py-2 hidden sm:flex">
-        <div className="container mx-auto flex justify-between items-center px-6">
-          <div className="text-sm">
-            Empowering Minds, Bridging Cultures – Learn Languages with EkushLanguage!
-          </div>
-          <div className="text-sm">
-            Mobile: +8801711791905 / +8801711791908 | Phone: +8802223315145
-          </div>
-        </div>
-      </div>
+      <TopNav />
 
       {/* Main Navbar */}
-      <nav className="bg-blue-800 text-white">
-        <div className="mx-auto flex items-center justify-between h-16 px-6">
+      <nav
+        style={{
+          background: '#3f3f46', // Custom gray 750 color
+          color: 'white',
+        }}
+        className="bg-gray-750 text-white"
+      >
+        <div className="mx-auto flex items-center justify-between h-16 px-6 relative">
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center space-x-4 cursor-pointer">
@@ -47,114 +44,119 @@ const NavBar = () => {
 
           {/* Menu */}
           <ul
-            className={`absolute md:static bg-blue-800 top-16 left-0 w-full md:w-auto z-50 transition-all duration-300 ease-in-out ${
-              menuOpen ? "opacity-100 visible" : "opacity-0 invisible md:opacity-100 md:visible"
+            className={`absolute md:static left-0 w-full md:w-auto z-40 transition-all duration-300 ease-in-out ${
+              menuOpen
+                ? "opacity-100 visible top-full"
+                : "opacity-0 invisible md:opacity-100 md:visible"
             } md:flex`}
+            style={{
+              backgroundColor: menuOpen ? "rgba(63, 63, 70, 0.9)" : "transparent",
+            }}
           >
-            <li className="border-b border-blue-700 md:border-none">
+            <li className="border-b border-gray-800 md:border-none">
               <Link
                 href="/"
-                className="block px-4 py-2 hover:bg-blue-700"
-                onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
+                className="block px-4 py-2"
+                onClick={() => setMenuOpen(false)}
               >
                 Home
               </Link>
             </li>
-            <li className="border-b border-blue-700 md:border-none">
+            <li className="border-b border-gray-800 md:border-none">
               <Link
                 href="/about"
-                className="block px-4 py-2 hover:bg-blue-700"
-                onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
+                className="block px-4 py-2 hover:bg-gray-700"
+                onClick={() => setMenuOpen(false)}
               >
                 About
               </Link>
             </li>
-            <li className="border-b border-blue-700 md:border-none">
+            <li className="border-b border-gray-800 md:border-none">
               <Link
                 href="/services"
-                className="block px-4 py-2 hover:bg-blue-700"
-                onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
+                className="block px-4 py-2 hover:bg-gray-700"
+                onClick={() => setMenuOpen(false)}
               >
                 Services
               </Link>
             </li>
-            <li className="border-b border-blue-700 md:border-none">
+            <li className="border-b border-gray-800 md:border-none">
               <Link
                 href="/exam"
-                className="block px-4 py-2 hover:bg-blue-700"
-                onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
+                className="block px-4 py-2 hover:bg-gray-700"
+                onClick={() => setMenuOpen(false)}
               >
                 Exam
               </Link>
             </li>
-            <li className="border-b border-blue-700 md:border-none">
+            <li className="border-b border-gray-800 md:border-none">
               <Link
                 href="/success"
-                className="block px-4 py-2 hover:bg-blue-700"
-                onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
+                className="block px-4 py-2 hover:bg-gray-700"
+                onClick={() => setMenuOpen(false)}
               >
                 Success
               </Link>
             </li>
-            <li className="border-b border-blue-700 md:border-none">
+            <li className="border-b border-gray-800 md:border-none">
               <Link
                 href="/gallery"
-                className="block px-4 py-2 hover:bg-blue-700"
-                onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
+                className="block px-4 py-2 hover:bg-gray-700"
+                onClick={() => setMenuOpen(false)}
               >
                 Gallery
               </Link>
             </li>
-            <li className="border-b border-blue-700 md:border-none">
+            <li className="border-b border-gray-800 md:border-none">
               <Link
                 href="/tutorials"
-                className="block px-4 py-2 hover:bg-blue-700"
-                onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
+                className="block px-4 py-2 hover:bg-gray-700"
+                onClick={() => setMenuOpen(false)}
               >
                 Tutorials
               </Link>
             </li>
-            <li className="border-b border-blue-700 md:border-none">
+            <li className="border-b border-gray-800 md:border-none">
               <Link
                 href="/news"
-                className="block px-4 py-2 hover:bg-blue-700"
-                onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
+                className="block px-4 py-2 hover:bg-gray-700"
+                onClick={() => setMenuOpen(false)}
               >
                 News
               </Link>
             </li>
-            <li className="border-b border-blue-700 md:border-none">
+            <li className="border-b border-gray-800 md:border-none">
               <Link
                 href="/contact"
-                className="block px-4 py-2 hover:bg-blue-700"
-                onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
+                className="block px-4 py-2 hover:bg-gray-700"
+                onClick={() => setMenuOpen(false)}
               >
                 Contact
               </Link>
             </li>
-            <li className="border-b border-blue-700 md:border-none">
+            <li className="border-b border-gray-800 md:border-none">
               <Link
                 href="/certificate-verification"
-                className="block px-4 py-2 hover:bg-blue-700"
-                onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
+                className="block px-4 py-2 hover:bg-gray-700"
+                onClick={() => setMenuOpen(false)}
               >
                 Certificate
               </Link>
             </li>
-            <li className="border-b border-blue-700 md:border-none">
+            <li className="border-b border-gray-800 md:border-none">
               <Link
                 href="/register"
-                className="block px-4 py-2 hover:bg-blue-700"
-                onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
+                className="block px-4 py-2 hover:bg-gray-700"
+                onClick={() => setMenuOpen(false)}
               >
                 Admission
               </Link>
             </li>
-            <li className="border-b border-blue-700 md:border-none">
+            <li className="border-b border-gray-800 md:border-none">
               <Link
                 href="/login"
-                className="block px-4 py-2 hover:bg-blue-700"
-                onClick={() => setMenuOpen(false)} // Close menu on link click (mobile only)
+                className="block px-4 py-2 hover:bg-gray-700"
+                onClick={() => setMenuOpen(false)}
               >
                 Login
               </Link>

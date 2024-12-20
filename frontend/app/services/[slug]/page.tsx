@@ -145,4 +145,3 @@ export default async function CourseDetails({ params }: { params: { slug: string
     return <p className="text-center">Course not found.</p>;
   }
 }
-

@@ -1,10 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 const CareerSuccessPage = () => {
-  const router = useRouter();
 
   return (
     <div className="min-h-screen bg-gray-50 px-4 flex flex-col justify-center items-center">

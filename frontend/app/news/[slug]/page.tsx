@@ -1,14 +1,14 @@
-'use client';
-
-import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const newsData = [
   {
     slug: 'space-exploration',
     title: 'Breaking: New Discoveries in Space Exploration',
-    description: 'Scientists have uncovered groundbreaking findings that could change our understanding of the universe.',
-    image: 'https://images.unsplash.com/photo-1581091870683-3ff21bb04c3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
+    description:
+      'Scientists have uncovered groundbreaking findings that could change our understanding of the universe.',
+    image:
+      'https://images.unsplash.com/photo-1581091870683-3ff21bb04c3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
     category: 'Science',
     date: 'December 16, 2024',
     content: `
@@ -20,8 +20,10 @@ const newsData = [
   {
     slug: 'ai-dominance',
     title: 'Tech Giants Compete for AI Dominance',
-    description: 'A closer look at how major tech companies are investing in the future of artificial intelligence.',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
+    description:
+      'A closer look at how major tech companies are investing in the future of artificial intelligence.',
+    image:
+      'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
     category: 'Technology',
     date: 'December 15, 2024',
     content: `
@@ -32,15 +34,20 @@ const newsData = [
   },
 ];
 
-export default function NewsDetails({ params }: { params: { slug: string } }) {
-  const router = useRouter();
+// Define the type for dynamic route params
+interface NewsDetailsParams {
+  params: {
+    slug: string;
+  };
+}
 
-  // Extract slug and normalize it
-  const slug = params?.slug;
-  const normalizedSlug = slug?.replace(/--+/g, '-');
+// Dynamic Route Component
+export default function NewsDetails({ params }: NewsDetailsParams) {
+  // Extract slug from params
+  const { slug } = params;
 
   // Find the news article by slug
-  const article = newsData.find((news) => news.slug === normalizedSlug);
+  const article = newsData.find((news) => news.slug === slug);
 
   if (!article) {
     return (
@@ -50,12 +57,12 @@ export default function NewsDetails({ params }: { params: { slug: string } }) {
           The news article you are looking for does not exist.
         </p>
         <div className="text-center mt-6">
-          <button
-            onClick={() => router.back()}
+          <Link
+            href="/news"
             className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
           >
-            Go Back
-          </button>
+            Back to News
+          </Link>
         </div>
       </div>
     );
@@ -89,12 +96,12 @@ export default function NewsDetails({ params }: { params: { slug: string } }) {
 
       {/* Go Back Button */}
       <div className="text-center">
-        <button
-          onClick={() => router.back()}
+        <Link
+          href="/news"
           className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
         >
-          Go Back
-        </button>
+          Back to News
+        </Link>
       </div>
     </div>
   );
