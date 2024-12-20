@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function TopNav() {
-  const text ="মানসিক বিকাশ ও সংস্কৃতির সংযোগ – একুশ ল্যাঙ্গুয়েজ একাডেমির সাথে ভাষা শিক্ষার নতুন দিগন্ত উন্মোচন করুন!";
+  const text =`% জহির স্যার পরিচালিত "একুশ ল্যাঙ্গুয়েজ একাডেমি"-তে আপনাকে স্বাগতম। `;
 
   const [displayedText, setDisplayedText] = useState("");
   const [isAnimating, setIsAnimating] = useState(false);
@@ -46,11 +46,13 @@ function TopNav() {
       <div className="bg-red-800 text-white py-2 hidden sm:flex">
         <div className="container mx-auto flex justify-between items-center px-6">
           <div className="text-sm animate-typing">{displayedText}</div>
-          <div className="text-sm">
-          Phone: +8802223315145 | Mobile: +8801711791905 | 01711791908
+          <div className="text-sm flex space-x-16">
+            <span>Phone: +8802223315145</span>
+            <span>Mobile: +8801711791905 | +8801711791908</span>
           </div>
         </div>
       </div>
+
     </>
   );
 }

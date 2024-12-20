@@ -136,7 +136,7 @@ const NavBar = () => {
                 className="block px-4 py-2 hover:bg-blue-700"
                 onClick={() => setMenuOpen(false)}
               >
-                Certificate
+                Certificate verification
               </Link>
             </li>
             <li className="border-b border-blue-800 md:border-none">
